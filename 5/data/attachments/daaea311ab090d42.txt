@@ -1,0 +1,2 @@
+
+Performance Test: 100k rows validated in 0.0450 seconds.

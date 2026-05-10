@@ -1,0 +1,27 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","1","test_drift_detector_with_drift","tests.ai_agents","Sun May 10 01:32:37 UTC 2026","passed","Sun May 10 01:32:37 UTC 2026","","test_agents","",""
+"","2","test_read_csv_success","tests.ingestion","Sun May 10 01:32:37 UTC 2026","passed","Sun May 10 01:32:37 UTC 2026","","test_reader","",""
+"","1","test_check_cross_field_logic","tests.validation","Sun May 10 01:32:37 UTC 2026","passed","Sun May 10 01:32:37 UTC 2026","","test_engine","",""
+"","1","test_check_unique","tests.validation","Sun May 10 01:32:37 UTC 2026","passed","Sun May 10 01:32:37 UTC 2026","","test_engine","",""
+"","1","test_check_pattern","tests.validation","Sun May 10 01:32:37 UTC 2026","passed","Sun May 10 01:32:37 UTC 2026","","test_engine","",""
+"","1","test_metadata_catalog","tests.observability","Sun May 10 01:32:37 UTC 2026","passed","Sun May 10 01:32:37 UTC 2026","","test_observability","",""
+"","1","test_check_accepted_values","tests.validation","Sun May 10 01:32:37 UTC 2026","passed","Sun May 10 01:32:37 UTC 2026","","test_engine","",""
+"","3","test_player_transformer_cleaning","tests.transformation","Sun May 10 01:32:37 UTC 2026","passed","Sun May 10 01:32:37 UTC 2026","","test_transformer","",""
+"","1","test_drift_detector_exception","tests.ai_agents","Sun May 10 01:32:37 UTC 2026","passed","Sun May 10 01:32:37 UTC 2026","","test_agents","",""
+"","1","test_drift_detector_no_drift","tests.ai_agents","Sun May 10 01:32:37 UTC 2026","passed","Sun May 10 01:32:37 UTC 2026","","test_agents","",""
+"
+    Non-Functional Performance Test:
+    Ensures that the validation engine can process 100,000 rows
+    for standard rules (null checks, range checks, pattern checks)
+    within an acceptable SLA (e.g., under 1.5 seconds).
+    ","94","test_performance_100k_rows","tests.validation","Sun May 10 01:32:37 UTC 2026","passed","Sun May 10 01:32:37 UTC 2026","","test_performance","",""
+"","0","test_anomaly_engine_with_anomaly","tests.observability","Sun May 10 01:32:37 UTC 2026","passed","Sun May 10 01:32:37 UTC 2026","","test_observability","",""
+"","52","test_summarizer_with_failures","tests.ai_agents","Sun May 10 01:32:37 UTC 2026","passed","Sun May 10 01:32:37 UTC 2026","","test_agents","",""
+"","0","test_read_csv_not_found","tests.ingestion","Sun May 10 01:32:37 UTC 2026","passed","Sun May 10 01:32:37 UTC 2026","","test_reader","",""
+"","3","test_check_not_null","tests.validation","Sun May 10 01:32:37 UTC 2026","passed","Sun May 10 01:32:37 UTC 2026","","test_engine","",""
+"","0","test_anomaly_engine_no_anomaly","tests.observability","Sun May 10 01:32:37 UTC 2026","passed","Sun May 10 01:32:37 UTC 2026","","test_observability","",""
+"","1","test_anomaly_engine_insufficient_history","tests.observability","Sun May 10 01:32:37 UTC 2026","passed","Sun May 10 01:32:37 UTC 2026","","test_observability","",""
+"","1","test_read_sample_players","tests.ingestion","Sun May 10 01:32:37 UTC 2026","passed","Sun May 10 01:32:37 UTC 2026","","test_reader","",""
+"","3","test_transaction_transformer_orphans","tests.transformation","Sun May 10 01:32:37 UTC 2026","passed","Sun May 10 01:32:37 UTC 2026","","test_transformer","",""
+"","1","test_check_range","tests.validation","Sun May 10 01:32:37 UTC 2026","passed","Sun May 10 01:32:37 UTC 2026","","test_engine","",""
+"","0","test_summarizer_empty","tests.ai_agents","Sun May 10 01:32:37 UTC 2026","passed","Sun May 10 01:32:37 UTC 2026","","test_agents","",""

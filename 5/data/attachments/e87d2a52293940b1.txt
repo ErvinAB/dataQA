@@ -1,0 +1,1 @@
+INFO     metadata_catalog:metadata_catalog.py:45 Logged run metadata for players. Health Score: 80.0%

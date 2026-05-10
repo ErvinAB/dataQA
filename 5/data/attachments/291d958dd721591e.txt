@@ -1,0 +1,3 @@
+WARNING  drift_detector:drift_detector.py:26 scipy is not installed. Drift detection will return mocked results. Please install scipy for real statistical tests.
+INFO     drift_detector:drift_detector.py:32 Running Data Drift Detection on 1 columns...
+ERROR    drift_detector:drift_detector.py:76 Data Drift detected in columns: ['age']
