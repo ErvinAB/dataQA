@@ -1,0 +1,2 @@
+INFO     transformation_engine:transformer.py:12 Starting transformation for PlayerTransformer
+INFO     transformation_engine:transformer.py:16 Finished transformation for PlayerTransformer
