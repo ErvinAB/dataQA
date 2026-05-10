@@ -1,0 +1,11 @@
+pandas
+sqlalchemy
+psycopg2-binary
+pytest
+pydantic
+python-dotenv
+allure-pytest
+pytest-xdist
+factory_boy
+pyyaml
+requests
