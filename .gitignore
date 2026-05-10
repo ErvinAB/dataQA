@@ -21,3 +21,13 @@ rad.json
 *.flf
 #Test results file
 TestResults.xml
+node_modules/
+.venv/
+.env
+*.env
+.env.local
+*.env.*
+__pycache__/
+*.pyc
+.pytest_cache/
+reports/allure-results/

@@ -1,0 +1,12 @@
+player_id,username,email,joined_at,country,age
+101,gamer_pro,gamer_pro@example.com,2023-01-01 10:00:00,USA,25
+102,shadow_king,shadow@test.com,2023-01-02 11:30:00,UK,30
+103,pixel_queen,pixel@web.org,2023-01-03 12:45:00,Canada,22
+104,no_email_user,,2023-01-04 09:15:00,USA,28
+105,duplicate_id,dup@test.com,2023-01-05 14:20:00,Australia,35
+105,is_duplicate,is_dup@test.com,2023-01-05 14:20:00,Australia,35
+106,young_gamer,young@play.com,2023-01-06 16:10:00,UK,-5
+107,old_gamer,old@legacy.com,2023-01-07 08:00:00,Germany,150
+108,bad_date_user,bad@date.com,invalid-date,France,40
+109,null_country_user,null@country.com,2023-01-09 13:00:00,,33
+110,space_user,space@nebula.com,2023-01-10 20:00:00,USA,1000
