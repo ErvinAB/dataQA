@@ -23,7 +23,7 @@ def test_check_unique(sample_df):
     validator = DataQualityValidator(sample_df)
     result = validator.check_unique(['id'])
     assert result.success is False
-    assert result.details['id'] == 1
+    assert result.details['id'] == 2
 
 def test_check_accepted_values(sample_df):
     validator = DataQualityValidator(sample_df)

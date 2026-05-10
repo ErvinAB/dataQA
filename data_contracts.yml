@@ -1,0 +1,23 @@
+datasets:
+  players:
+    description: "Raw player profiles ingested from the mock S3 Data Lake."
+    checks:
+      - type: not_null
+        columns:
+          - player_id
+          - username
+      - type: pattern
+        column: email
+        regex: "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$"
+        
+  transactions:
+    description: "In-game purchase transactions."
+    checks:
+      - type: not_null
+        columns:
+          - transaction_id
+          - player_id
+          - amount
+      - type: range
+        column: amount
+        min_val: 0.01

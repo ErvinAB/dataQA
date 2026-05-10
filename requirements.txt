@@ -9,3 +9,5 @@ pytest-xdist
 factory_boy
 pyyaml
 requests
+prometheus_client==0.20.0
+pyyaml==6.0.1
