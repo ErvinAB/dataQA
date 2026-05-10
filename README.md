@@ -57,22 +57,30 @@ graph TD
 
 ---
 
-## 🌟 Key Features
+## 🌟 Key Features (The DataOps Upgrade)
 
-### 1. Advanced Data Validation (The Engine)
-Built with **Pydantic V2** and Pandas, the engine supports:
+### 1. Declarative YAML Data Contracts (The Engine)
+Validation rules are no longer hardcoded. The framework uses a sleek `data_contracts.yml` to define checks dynamically.
 - **Structural Integrity**: Strict schema enforcement and type coercion.
 - **Content Rules**: Regex pattern matching (e.g., email validation).
 - **Relational Logic**: Cross-field logical checks (e.g., `start_date < end_date`).
-- **Statistical Thresholds**: Range bounds and accepted value mapping.
+- **Non-Functional Scalability**: The core engine is performance-tested using Pytest to process **100,000+ rows** in under 1.5 seconds.
 
-### 2. AI-Assisted QA (The Brain)
-- **AI Failure Summarizer**: An agent that digests raw JSON failure logs and generates human-readable Root Cause Analysis (RCA) reports, categorizing severity and suggesting fixes.
-- **Data Drift Detection**: Utilizes `scipy` (Kolmogorov-Smirnov test) to monitor statistical shifts in data distributions over time, preventing silent ML model degradation.
+### 2. Fault-Tolerant ETL (Dead Letter Queues)
+- **Quarantine Pattern (DLQ)**: Bad data doesn't crash the pipeline and isn't just dropped. The validation engine isolates failed rows into a `data/quarantine/` directory for manual review, while `clean_data` safely proceeds to the warehouse.
+- **Simulated S3 Data Lakes**: The `DataReader` mimics cloud ingestion from `s3://` URIs, a critical pattern for modern Data Engineers.
+- **SQL Warehouse Validation**: A dedicated `WarehouseValidator` connects directly to PostgreSQL to run complex referential integrity checks (e.g., finding orphaned records) *after* the data is loaded.
 
-### 3. Proactive Observability (The Pulse)
+### 3. AI-Assisted QA (Probabilistic Testing)
+- **API-Driven AI Summarizer**: An agent that digests raw JSON failure logs and generates human-readable Root Cause Analysis (RCA) reports by calling external Mock AI APIs.
+- **Data Drift Detection**: Utilizes `scipy` (Kolmogorov-Smirnov test) to monitor statistical shifts in data. The pipeline **automatically halts (Fail-Fast)** if severe drift is detected.
+
+### 4. Enterprise Observability (The Pulse)
+- **Data Lineage Tracker**: Automatically maps the flow of data through the pipeline (`s3_raw` -> `validation_engine` -> `postgres_warehouse`) into a structured JSON artifact (`lineage.json`), mimicking tools like OpenLineage.
+- **Prometheus Metrics Endpoint**: A `/metrics` server broadcasts the "Data Health Score" and "Row Counts", allowing tools like Grafana to scrape and alert on pipeline health.
 - **Anomaly Engine**: Calculates Z-scores on incoming data volumes against historical baselines to catch upstream pipeline breakages immediately.
-- **Metadata Catalog**: A local JSON-based tracker that logs every pipeline run, generating a "Health Score" for data observability.
+
+
 
 ---
 

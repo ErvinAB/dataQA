@@ -38,8 +38,20 @@ def test_drift_detector_with_drift():
     ref_df = pd.DataFrame({"age": np.random.normal(30, 5, 100)})
     cur_df = pd.DataFrame({"age": np.random.normal(50, 5, 100)}) # Shifted mean
     
-    detector = DataDriftDetector(p_value_threshold=0.05)
+    # We set enforce_failure=False here to test the return object rather than the exception
+    detector = DataDriftDetector(p_value_threshold=0.05, enforce_failure=False)
     res = detector.detect_drift(ref_df, cur_df, ["age"])
     
     assert res["drift_detected"] is True
     assert "age" in res["columns_with_drift"]
+
+def test_drift_detector_exception():
+    np.random.seed(42)
+    ref_df = pd.DataFrame({"age": np.random.normal(30, 5, 100)})
+    cur_df = pd.DataFrame({"age": np.random.normal(50, 5, 100)}) # Shifted mean
+    
+    detector = DataDriftDetector(p_value_threshold=0.05, enforce_failure=True)
+    with pytest.raises(Exception) as excinfo:
+        detector.detect_drift(ref_df, cur_df, ["age"])
+    assert "Pipeline halted" in str(excinfo.value)
+

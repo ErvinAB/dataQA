@@ -9,14 +9,19 @@ except ImportError:
 
 logger = setup_logger("drift_detector")
 
+class DataDriftException(Exception):
+    """Raised when severe data drift is detected in the pipeline."""
+    pass
+
 class DataDriftDetector:
     """
     Detects statistical data drift between a reference dataset (e.g., training data)
     and an incoming dataset (e.g., current production batch).
     """
 
-    def __init__(self, p_value_threshold: float = 0.05):
+    def __init__(self, p_value_threshold: float = 0.05, enforce_failure: bool = True):
         self.p_value_threshold = p_value_threshold
+        self.enforce_failure = enforce_failure
         if stats is None:
             logger.warning("scipy is not installed. Drift detection will return mocked results. Please install scipy for real statistical tests.")
 
@@ -67,8 +72,12 @@ class DataDriftDetector:
                 results["drift_detected"] = True
 
         if results["drift_detected"]:
-            logger.warning(f"Data Drift detected in columns: {results['columns_with_drift']}")
+            error_msg = f"Data Drift detected in columns: {results['columns_with_drift']}"
+            logger.error(error_msg)
+            if self.enforce_failure:
+                raise DataDriftException(f"Pipeline halted to prevent model degradation: {error_msg}")
         else:
             logger.info("No significant data drift detected.")
 
         return results
+
